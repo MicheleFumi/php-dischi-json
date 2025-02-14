@@ -1,5 +1,7 @@
 <?php
 require_once "./server.php";
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
 ?>
 
@@ -8,13 +10,12 @@ require_once "./server.php";
 
 <head>
     <title>Biblioteca</title>
-    <!-- Required meta tags -->
+
     <meta charset="utf-8" />
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <!-- Bootstrap CSS v5.2.1 -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
         rel="stylesheet"
@@ -33,11 +34,13 @@ require_once "./server.php";
             <div class="mb-3">
                 <label for="titolo" class="form-label text-white">Inserisci il titolo del brano</label>
                 <input type="text" name="titolo" id="titolo" class="form-control" placeholder="Es. Hey Jude">
+                <?php echo '<label for="errore" class="form-label text-danger">' . $errore_titolo . '</label>' ?>
             </div>
 
             <div class="mb-3">
                 <label for="artista" class="form-label text-white">Inserisci il nome dell'artista</label>
                 <input type="text" name="artista" id="artista" class="form-control" placeholder="Es. The Beatles">
+                <?php echo '<label for="errore" class="form-label text-danger">' . $errore_artista . '</label>' ?>
             </div>
 
             <div class="mb-3">
@@ -50,8 +53,24 @@ require_once "./server.php";
                   </div>';
                 }
                 ?>
+                <?php echo '<label for="errore" class="form-label text-danger">' . $errore_genere . '</label>' ?>
             </div>
+            <?php
+            if (empty($titolo)) {
+                $errore_titolo = 'Il titolo è obbligatorio.';
+            }
 
+            if (empty($artista)) {
+                $errore_artista = 'L\'artista è obbligatorio.';
+            }
+
+            if (empty($genere)) {
+                $errore_genere = 'Seleziona almeno un genere.';
+            }
+
+
+
+            ?>
             <button type="submit" class="btn btn-primary w-100">Aggiungi alla collezione</button>
         </form>
 

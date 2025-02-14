@@ -29,26 +29,32 @@ require_once "./server.php";
     <div class="container">
         <h1 class="py-3">Catalogo Dischi</h1>
         <hr>
-        <form action="./server.php" method="POST">
-            <input type="text" name="titolo" id="titolo">
-            <label for="titolo">Inserisci il titolo del brano</label>
+        <form action="./server.php" method="POST" class="p-4 bg-secondary rounded shadow-lg">
+            <div class="mb-3">
+                <label for="titolo" class="form-label text-white">Inserisci il titolo del brano</label>
+                <input type="text" name="titolo" id="titolo" class="form-control" placeholder="Es. Hey Jude">
+            </div>
 
-            <input type="text" name="artista" id="titolo">
-            <label for="artista">Inserisci il nome dell'artista</label>
+            <div class="mb-3">
+                <label for="artista" class="form-label text-white">Inserisci il nome dell'artista</label>
+                <input type="text" name="artista" id="artista" class="form-control" placeholder="Es. The Beatles">
+            </div>
 
-            <?php
-            foreach ($database as $album) {
+            <div class="mb-3">
+                <label class="form-label text-white">Seleziona il genere</label>
+                <?php
+                foreach ($generi as $genere) {
+                    echo '<div class="form-check text-white">
+                    <input class="form-check-input" type="checkbox" value="' . $genere . '" name="genere[]">
+                    <label class="form-check-label" for="">' . $genere . '</label>
+                  </div>';
+                }
+                ?>
+            </div>
 
-                echo '<div class="form-check">' .
-                    '<input class="form-check-input" type="checkbox" value="' . $album["genere"] . '" id="" />' .
-                    '<label class="form-check-label" for="">' . $album["genere"] . '</label>' .
-                    '</div>';
-            };
-
-
-            ?>
-            <button type="submit">Aggiungi alla collezione</button>
+            <button type="submit" class="btn btn-primary w-100">Aggiungi alla collezione</button>
         </form>
+
 
         <hr>
         <h2>La tua collezione </h2>

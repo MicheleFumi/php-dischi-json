@@ -2,71 +2,62 @@
     {
       "titolo": "Abbey Road",
       "artista": "The Beatles",
-      "url_cover": "https://via.placeholder.com/150/0000FF/808080?Text=Cover+1",
-      "anno_pubblicazione": 1969,
+      "url_cover": "./images/1.webp",
       "genere": "Rock"
     },
     {
       "titolo": "The Dark Side of the Moon",
       "artista": "Pink Floyd",
-      "url_cover": "https://via.placeholder.com/150/FF0000/FFFFFF?Text=Cover+2",
-      "anno_pubblicazione": 1973,
+      "url_cover": "./images/2.webp",
       "genere": "Progressive Rock"
     },
     {
       "titolo": "Thriller",
       "artista": "Michael Jackson",
-      "url_cover": "https://via.placeholder.com/150/00FF00/000000?Text=Cover+3",
-      "anno_pubblicazione": 1982,
+      "url_cover": "./images/3.webp",
       "genere": "Pop"
     },
     {
       "titolo": "The Wall",
       "artista": "Pink Floyd",
-      "url_cover": "https://via.placeholder.com/150/FFFF00/000000?Text=Cover+4",
-      "anno_pubblicazione": 1979,
+      "url_cover": "./images/1.webp",
       "genere": "Rock"
     },
     {
       "titolo": "Back in Black",
       "artista": "AC/DC",
-      "url_cover": "https://via.placeholder.com/150/FF00FF/000000?Text=Cover+5",
-      "anno_pubblicazione": 1980,
+      "url_cover": "./images/2.webp",
       "genere": "Hard Rock"
     },
     {
       "titolo": "Rumours",
       "artista": "Fleetwood Mac",
-      "url_cover": "https://via.placeholder.com/150/00FFFF/000000?Text=Cover+6",
-      "anno_pubblicazione": 1977,
+      "url_cover": "./images/3.webp",
       "genere": "Rock"
     },
     {
       "titolo": "Born to Run",
       "artista": "Bruce Springsteen",
-      "url_cover": "https://via.placeholder.com/150/0000FF/FFFFFF?Text=Cover+7",
-      "anno_pubblicazione": 1975,
+      "url_cover": "./images/1.webp",
       "genere": "Rock"
     },
     {
       "titolo": "Hotel California",
       "artista": "Eagles",
-      "url_cover": "https://via.placeholder.com/150/808080/FFFFFF?Text=Cover+8",
-      "anno_pubblicazione": 1976,
+      "url_cover": "./images/2.webp",
       "genere": "Rock"
     },
     {
       "titolo": "Purple Rain",
       "artista": "Prince",
-      "url_cover": "https://via.placeholder.com/150/800080/FFFFFF?Text=Cover+9",
+      "url_cover": "./images/3.webp",
       "anno_pubblicazione": 1984,
       "genere": "Pop Rock"
     },
     {
       "titolo": "Lemonade",
       "artista": "Beyoncé",
-      "url_cover": "https://via.placeholder.com/150/FFD700/000000?Text=Cover+10",
-      "anno_pubblicazione": 2016,
+      "url_cover": "./images/1.webp",
       "genere": "Pop, R&B"
     }
   ]

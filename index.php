@@ -47,6 +47,7 @@ error_reporting(E_ALL);
                 <label class="form-label text-white">Seleziona il genere</label>
                 <?php
                 foreach ($generi as $genere) {
+
                     echo '<div class="form-check text-white">
                     <input class="form-check-input" type="checkbox" value="' . $genere . '" name="genere[]">
                     <label class="form-check-label" for="">' . $genere . '</label>
@@ -56,22 +57,11 @@ error_reporting(E_ALL);
                 <?php echo '<label for="errore" class="form-label text-danger">' . $errore_genere . '</label>' ?>
             </div>
             <?php
-            if (empty($titolo)) {
-                $errore_titolo = 'Il titolo è obbligatorio.';
-            }
-
-            if (empty($artista)) {
-                $errore_artista = 'L\'artista è obbligatorio.';
-            }
-
-            if (empty($genere)) {
-                $errore_genere = 'Seleziona almeno un genere.';
-            }
 
 
 
             ?>
-            <button type="submit" class="btn btn-primary w-100">Aggiungi alla collezione</button>
+            <button type="submit" class="btn btn-primary w-100 ">Aggiungi alla collezione</button>
         </form>
 
 

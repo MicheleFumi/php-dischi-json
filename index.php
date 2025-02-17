@@ -1,7 +1,5 @@
 <?php
-require_once "./server.php";
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+
 
 ?>
 
@@ -34,33 +32,22 @@ error_reporting(E_ALL);
             <div class="mb-3">
                 <label for="titolo" class="form-label text-white">Inserisci il titolo del brano</label>
                 <input type="text" name="titolo" id="titolo" class="form-control" placeholder="Es. Hey Jude">
-                <?php echo '<label for="errore" class="form-label text-danger">' . $errore_titolo . '</label>' ?>
+
             </div>
 
             <div class="mb-3">
                 <label for="artista" class="form-label text-white">Inserisci il nome dell'artista</label>
                 <input type="text" name="artista" id="artista" class="form-control" placeholder="Es. The Beatles">
-                <?php echo '<label for="errore" class="form-label text-danger">' . $errore_artista . '</label>' ?>
+
             </div>
 
             <div class="mb-3">
-                <label class="form-label text-white">Seleziona il genere</label>
-                <?php
-                foreach ($generi as $genere) {
 
-                    echo '<div class="form-check text-white">
-                    <input class="form-check-input" type="checkbox" value="' . $genere . '" name="genere[]">
-                    <label class="form-check-label" for="">' . $genere . '</label>
-                  </div>';
-                }
-                ?>
-                <?php echo '<label for="errore" class="form-label text-danger">' . $errore_genere . '</label>' ?>
+                <label for="genere" class="form-label text-white">scegli il genere</label>
+                <input type="text" name="genere" id="genere" class="form-control" placeholder="Es. Rock">
+
             </div>
-            <?php
 
-
-
-            ?>
             <button type="submit" class="btn btn-primary w-100 ">Aggiungi alla collezione</button>
         </form>
 
@@ -69,14 +56,18 @@ error_reporting(E_ALL);
         <h2>La tua collezione </h2>
 
         <?php
+
+        $discs_in_string = file_get_contents("./database.json");
+        $discs = json_decode($discs_in_string, true);
+
         echo '<div class="d-flex flex-wrap justify-content-start">';
 
-        foreach ($database as $album) {
+        foreach ($discs as $disc) {
             echo '<div class="card" style="width: 18rem; margin: 10px;">
-            <img src="' . $album["url_cover"] . '" class="card-img-top" alt="...">
+            <img src="' . $disc["url_cover"] . '" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title text-center">' . $album["titolo"] . " - " . $album["artista"] . '</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary text-center">' . $album["genere"] . '</h6>
+                <h5 class="card-title text-center">' . $disc["titolo"] . " - " . $disc["artista"] . '</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary text-center">' . $disc["genere"] . '</h6>
             </div>
         </div>';
         }

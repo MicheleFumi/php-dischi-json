@@ -4,7 +4,7 @@
 /* var_dump($_POST); */
 
 
-if ($_POST["titolo"] && $_POST["artista"] && $_POST["genere"]) {
+if (isset($_POST["titolo"]) && isset($_POST["artista"]) && isset($_POST["genere"])) {
 
     $titolo =  $_POST["titolo"];
     $artista = $_POST["artista"];

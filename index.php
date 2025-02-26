@@ -1,5 +1,7 @@
 <?php
 
+$discs_in_string = file_get_contents("./database.json");
+$discs = json_decode($discs_in_string, true);
 
 ?>
 
@@ -55,30 +57,29 @@
         <hr>
         <h2>La tua collezione </h2>
 
-        <?php
 
-        $discs_in_string = file_get_contents("./database.json");
-        $discs = json_decode($discs_in_string, true);
+        <div class="d-flex flex-wrap justify-content-start">
+            <?php
+            foreach ($discs as $disc) {
+            ?>
+                <div class="card" style="width: 18rem; margin: 10px;">
+                    <img src="<?php echo $disc["url_cover"] ?>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-center"> <?php echo $disc["titolo"] . '-' . $disc["artista"] ?></h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary text-center"><?php echo $disc["genere"] ?></h6>
+                    </div>
+                </div>
 
-        echo '<div class="d-flex flex-wrap justify-content-start">';
-
-        foreach ($discs as $disc) {
-            echo '<div class="card" style="width: 18rem; margin: 10px;">
-            <img src="' . $disc["url_cover"] . '" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title text-center">' . $disc["titolo"] . " - " . $disc["artista"] . '</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary text-center">' . $disc["genere"] . '</h6>
-            </div>
-        </div>';
-        }
-
-        echo '</div>';
-        ?>
+            <?php } ?>
 
 
 
 
-    </div>
+
+
+
+
+        </div>
 
 
 </body>

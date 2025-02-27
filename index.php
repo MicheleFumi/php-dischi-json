@@ -1,8 +1,6 @@
 <?php
 
-$discs_in_string = file_get_contents("./database.json");
-$discs = json_decode($discs_in_string, true);
-
+require_once './server.php'
 ?>
 
 <!doctype html>
@@ -33,20 +31,20 @@ $discs = json_decode($discs_in_string, true);
         <form action="./server.php" method="POST" class="p-4 bg-secondary rounded shadow-lg">
             <div class="mb-3">
                 <label for="titolo" class="form-label text-white">Inserisci il titolo del brano</label>
-                <input type="text" name="titolo" id="titolo" class="form-control" placeholder="Es. Hey Jude">
+                <input type="text" name="titolo" id="titolo" class="form-control" placeholder="Es. Hey Jude" required>
 
             </div>
 
             <div class="mb-3">
                 <label for="artista" class="form-label text-white">Inserisci il nome dell'artista</label>
-                <input type="text" name="artista" id="artista" class="form-control" placeholder="Es. The Beatles">
+                <input type="text" name="artista" id="artista" class="form-control" placeholder="Es. The Beatles" required>
 
             </div>
 
             <div class="mb-3">
 
                 <label for="genere" class="form-label text-white">scegli il genere</label>
-                <input type="text" name="genere" id="genere" class="form-control" placeholder="Es. Rock">
+                <input type="text" name="genere" id="genere" class="form-control" placeholder="Es. Rock" required>
 
             </div>
 

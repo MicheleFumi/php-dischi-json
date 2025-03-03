@@ -12,23 +12,12 @@ if (isset($_POST["titolo"]) && isset($_POST["artista"]) && isset($_POST["genere"
     $url_cover = "./images/1.webp";
 
 
-
-
-
-
-
-
-
     $discs[] = [
         "titolo" => $titolo,
         "artista" => $artista,
         "genere" => $genere,
         "url_cover" => $url_cover
     ];
-
-
-
-
 
     $database_in_string_updated = json_encode($discs);
     $database_updated = file_put_contents("./database.json", $database_in_string_updated);

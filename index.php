@@ -7,7 +7,7 @@ require_once './server.php'
 <html lang="en">
 
 <head>
-    <title>Biblioteca</title>
+    <title>Catalogo Dischi</title>
 
     <meta charset="utf-8" />
     <meta

@@ -56,28 +56,26 @@ require_once './server.php'
         <h2>La tua collezione </h2>
 
 
-        <div class="d-flex flex-wrap justify-content-start">
-            <?php
-            foreach ($discs as $disc) {
-            ?>
-                <div class="card" style="width: 18rem; margin: 10px;">
-                    <img src="<?php echo $disc["url_cover"] ?>" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-center"> <?php echo $disc["titolo"] . '-' . $disc["artista"] ?></h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary text-center"><?php echo $disc["genere"] ?></h6>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-2">
+            <?php foreach ($discs as $disc) { ?>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="<?php echo $disc["url_cover"] ?>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">
+                                <?php echo $disc["titolo"] . ' - ' . $disc["artista"] ?>
+                            </h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary text-center">
+                                <?php echo $disc["genere"] ?>
+                            </h6>
+                        </div>
                     </div>
                 </div>
-
             <?php } ?>
 
-
-
-
-
-
-
-
         </div>
+
 
 
 </body>
